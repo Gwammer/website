@@ -1,22 +1,143 @@
-<table style="width:100%">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<table class="Table-style" style="width:100%">
   <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Age</th>
+    <th>Name</th>
+    <th>Spynosis/Syntax</th>
+    <th>Description</th>
+    <th>Example</th>
   </tr>
   <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
+    <td> date - print or set the system date and time</td>
+    <td>date [OPTION]... [+FORMAT]
+       date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]</td>
+    <td>Display the current time in the given FORMAT, or set the system date.
+       Mandatory arguments to long options are mandatory for short options too.</td>
+    <td>Tue 30 Apr 15:32:54 UTC 2019</td>
   </tr>
   <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-</table>
+    <td> hostname - show or set the system's host name</td>
+    <td>hostname [-a|--alias] [-d|--domain] [-f|--fqdn|--long] [-A|--all-fqdns] [-i|--ip-address] [-I|--all-ip-addresses] [-s|--short] [-y|--yp|--nis]
+       hostname [-b|--boot] [-F|--file filename] [hostname]
+       hostname [-h|--help] [-V|--version]
 
-table, th, td {
-  border: 1px solid black;
-}
+       domainname [nisdomain] [-F file]
+       ypdomainname [nisdomain] [-F file]
+       nisdomainname [nisdomain] [-F file]
+
+       dnsdomainname
+</td>
+    <td>Hostname is used to display the system's DNS name, and to display or set its hostname or NIS domain name.</td>
+    <td>rpi04</td>
+  </tr>
+  <tr>
+    <td>arch - print machine hardware name (same as uname -m)</td>
+    <td> arch [OPTION]...</td>
+    <td>Print machine architecture.
+        --help display this help and exit
+
+       --version
+              output version information and exit</td>
+    <td>armv17</td>
+  </tr>
+  <tr>
+    <td>  uname - print system information</td>
+    <td>uname [OPTION]...</td>
+    <td>Print certain system information.  With no OPTION, same as -s.</td>
+    <td>Linux rpi04 4.14.79-v7+ #1159 SMP Sun Nov 4 17:50:20 GMT 2018 armv7l GNU/Linux</td>
+  </tr>
+  <tr>
+    <td>uptime - Tell how long the system has been running.</td>
+    <td>uptime [options]</td>
+    <td>uptime [options]
+uptime  gives  a  one line display of the following information.  The current time, how long the system has been running, how many users are currently logged on,
+       and the system load averages for the past 1, 5, and 15 minutes.</td>
+    <td>15:44:57 up 14 days, 19:07,  2 users,  load average: 0.34, 0.34, 0.35</td>
+    </tr>
+  <tr>
+    <td> who - show who is logged on</td>
+    <td>who [OPTION]... [ FILE | ARG1 ARG2 ]</td>
+    <td>Print information about users who are currently logged in.
+
+       -a, --all</td>
+    <td>sp1a     pts/0        2019-04-30 15:02 (172.19.215.176)
+sp1b     pts/1        2019-04-30 15:09 (172.19.220.86)</td>
+   </tr>
+   <tr>
+     <td>id - print real and effective user and group IDs</td>
+     <td>
+     <td>id [OPTION]... [USER]</td>
+     <td> Print user and group information for the specified USER, or (when USER omitted) for the current user.</td>
+     <td>uid=1003(sp1b) gid=1004(sp1b) groups=1004(sp1b),997(gpio),1007(studentgrp)</td>
+    </tr>
+    <tr>
+     <td> last, lastb - show a listing of last logged in users</td>
+     <td>last [options] [username...] [tty...]
+       lastb [options] [username...] [tty...]</td>
+     <td>last  searches back through the /var/log/wtmp file (or the file designated by the -f option) and displays a list of all users logged in (and out) since that file
+       was created.  One or more usernames and/or ttys can be given, in which case last will show only the entries matching those  arguments.   Names  of  ttys  can  be
+       abbreviated, thus last 0 is the same as last tty0.</td>
+     <td>
+sp1b     pts/1        172.19.220.86    Tue Apr 30 15:09   still logged in
+sp1a     pts/0        172.19.215.176   Tue Apr 30 15:02   still logged in
+sp2b     pts/1        172.19.222.0     Mon Apr 29 16:58 - 17:34  (00:35)
+sp2a     pts/0        172.19.221.224   Mon Apr 29 16:58 - 18:08  (01:09)
+sp1a     pts/0        172.19.214.230   Mon Apr 29 16:01 - 16:26  (00:25)
+sp1b     pts/1        172.19.215.37    Mon Apr 29 15:57 - 16:26  (00:29)
+sp1a     pts/0        172.19.214.230   Mon Apr 29 15:38 - 16:00  (00:22)
+sp1b     pts/1        172.19.215.37    Mon Apr 29 15:24 - 15:57  (00:32)
+sp1a     pts/0        172.19.214.230   Mon Apr 29 15:24 - 15:38  (00:13)
+reboot   system boot  4.14.79-v7+      Thu Jan  1 00:00   still running
+
+wtmp begins Fri Apr  5 20:19:23 2019</td>
+</tr>
+<tr>
+        <td>echo -- write arguments to the standard output</td>
+  <td>echo [-n] [string ...]</td>
+        <td>The echo utility writes any specified operands, separated by single blank
+     (` ') characters and followed by a newline (`\n') character, to the stan-
+     dard output.
+
+     The following option is available:
+scripts
+Daniels-iMac:~ danielchiu$ ~/gittest git init
+-bash: /Users/danielchiu/gittest: No such file or directory</td>
+        <td>Hello World</td>
+</tr>
+<tr>
+        <td> time -- time command execution</td>
+        <td>   time [-lp] utility</td>
+        <td>The time utility executes and times utility.  After the utility finishes,
+     time writes the total time elapsed, the time consumed by system overhead,
+     and the time used to execute utility to the standard error stream.  Times
+     are reported in seconds.
+
+     Available options:
+              -l      The contents of the rusage structure are printed.</td>
+        <td>real        0m5.368s
+user    0m0.001s
+sys     0m0.006s</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+</table>
+<a href="index.html">Visit my website</a>
+
+</table>
+<a href="index.html">Visit my website</a>
+
+
+
+
 
